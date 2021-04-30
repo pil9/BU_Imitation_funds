@@ -1,0 +1,86 @@
+#include <iostream>
+using namespace std;
+
+struct account
+{
+    int id;
+    int balance;
+    char name[25];
+}typedef account;
+ 
+account act[10];
+int act_i = 0;
+ 
+enum{DEPOSIT = 1, WITHDRAW, EXIT};
+ 
+void print_menu()
+{
+    cout << "------Menu------" << endl;
+    cout << "1. 입금 " << endl;
+    cout << "2. 출금 " << endl;
+    cout << "3. 프로그램 종료 " << endl;
+}
+ 
+void deposit()
+{
+    int money;
+    int id;
+ 
+    cout << "계좌 번호 : ";       cin >> id;
+    cout << "입금액 : "; cin >> money;
+ 
+    for(int i = 0; i <= act_i; i++)
+    {
+        if(act[i].id == id)
+        {
+            act[i].balance += money;
+            cout << "입금 완료" << endl;
+            return;
+        }
+    }
+    cout << "등록되어 있지 않은 계좌 번호 입니다." << endl;
+}
+ 
+void withdraw()
+{
+    int money;
+    int id;
+ 
+    cout << "계좌 번호 : ";   cin >> id;
+    cout << "출금액 : "; cin >> money;
+ 
+    for(int i = 0; i <= act_i; i++)
+    {
+        if(act[i].id == id)
+        {
+            if(act[i].balance < money)
+            {
+                cout << "잔액이 부족합니다." << endl;
+                return;
+            }
+            act[i].balance -= money;
+            cout << "출금되었습니다." << endl;
+            return;
+        }
+    }
+    cout << "등록되어 있지 않은 계좌 번호 입니다." << endl;
+}
+ 
+void main()
+{
+    int menu;
+    while(1)
+    {
+        print_menu();
+        cout << "선택 : ";
+        cin >> menu;
+ 
+        switch(menu)
+        {
+            case DEPOSIT : deposit(); break;
+            case WITHDRAW : withdraw(); break;
+            case EXIT : return;
+            default : cout << "잘못된 선택입니다." << endl;
+        }
+    }
+}
