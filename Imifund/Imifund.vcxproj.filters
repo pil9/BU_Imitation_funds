@@ -16,10 +16,16 @@
     <Filter Include="Source Files\account">
       <UniqueIdentifier>{e6b23376-405c-49d0-8796-beb1b8cb42ef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\user">
+      <UniqueIdentifier>{4fdf4289-10a2-4a10-aa8f-7558eefb3cc4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="소스.cpp">
+      <Filter>Source Files\user</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
