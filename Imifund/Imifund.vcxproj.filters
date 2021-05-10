@@ -24,8 +24,5 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="소스.cpp">
-      <Filter>Source Files\user</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>
